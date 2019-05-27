@@ -1,0 +1,5 @@
+symbol1: correct
+symbol2: correct
+Difficulty: difficult
+
+Usually I will not use the same mountain and same genie twice, but try to switch mountain and genie every round. However there were two genies, one on each mountain, which seemed more successfull in getting them to hear the music. All in all, i found it rather difficult, to find any rule of behaviour. 

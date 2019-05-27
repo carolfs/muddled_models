@@ -1,0 +1,1 @@
+crystal apears in each side of each planet no more than 3. So for example, it has been in the left side of planet red for 2 times then the next fight I will choose another side, or another planet

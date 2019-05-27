@@ -1,0 +1,1 @@
+Common transitions: 1 -> blue -> (3, 4); 2 -> pink -> (5, 6); 

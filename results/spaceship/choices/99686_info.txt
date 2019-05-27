@@ -1,0 +1,1 @@
+{u'computer_name': 'EconBLULab08', u'part_number': 9, u'simultaneous': True, u'planets': (u'Black', u'Red'), u'part_code': u'RFW', u'spaceships': (u'X', u'Y')}

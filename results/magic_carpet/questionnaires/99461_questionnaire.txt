@@ -1,0 +1,5 @@
+symbol1: correct
+symbol2: correct
+Difficulty: very easy
+
+If a certain genie gave a gold coin I try to get to that genie again (wind gets in the way occasionally). I split the symbols up into short and long for both colors. And decided which one was next in the 2 sec after the genie result and the carpet screen. The `long` symbol (specifically) blue appeared to  have genies who gave coins more often so I went to them more often than the others. I felt like the wind occured more often if I had found a genie that had given a coin 1 or 2 times in a row already. 

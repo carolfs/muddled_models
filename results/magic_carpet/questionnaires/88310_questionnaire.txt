@@ -1,0 +1,5 @@
+symbol1: correct
+symbol2: correct
+Difficulty: average
+
+First choose randomly, after several times, we know which corlor is which since it has the higher probability to go to the mountain directly. If a mucis is played, it will be played again for the same lamp, but the music will not be played three times. Then we will have to change the mountain.

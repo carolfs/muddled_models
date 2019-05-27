@@ -14,3 +14,5 @@ We used the following fonts to display the instructions for the participants:
 These fonts are not included in this repository because of the license.
 To run the tasks, you will need to change the path to these fonts.
 Where you have to do this is indicated in the exp.py file.
+
+The behavioral data (choices and questionnaires) can be found in the results directory.

@@ -1,0 +1,5 @@
+symbol1: correct
+symbol2: correct
+Difficulty: very easy
+
+chose the genie which gave the coin most of the time

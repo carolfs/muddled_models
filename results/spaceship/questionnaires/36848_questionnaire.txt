@@ -1,0 +1,1 @@
+if success: repeat until no success. after no success try again on the same chrystallis if then no success again try somewhere else

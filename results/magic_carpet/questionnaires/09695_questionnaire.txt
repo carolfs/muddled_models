@@ -1,0 +1,5 @@
+symbol1: correct
+symbol2: correct
+Difficulty: average
+
+It seems one genie is interested in music for a period and then lost his interest. So if I get a coin from one, then I'm going to visit it again until I find him not interested. Then I try to visit the genies who do not show interest for a long time, because after this long break, he may be interested again. But I'm a little sleepy during the test, so I may not 100% follow my strategy.

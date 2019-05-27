@@ -1,0 +1,5 @@
+symbol1: correct
+symbol2: correct
+Difficulty: average
+
+First I tried to find out which symbol means which colour by trying which symbol is tending more to go to pink mountain. I tried one symbol at the pink mountain, if it worked I stayed with it. If I had to try another one at the blue mountain I tryed this symbol. I wanted to remember and try every symbol as long as possible, and then switch mountains.

@@ -1,0 +1,5 @@
+symbol1: correct
+symbol2: correct
+Difficulty: easy
+
+At first it was experimenting which genie was interested in music. Once I found one, I repeated my choice up to three times and moved to the other mountain randomly. Then came back to my genie. Once I saw that the preference were changed conducted the same strategy to the other genie.

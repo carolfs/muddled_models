@@ -1,0 +1,3 @@
+First: If I found a stone, I tried it again at the same place, as long as it was empty. If I didn't find one there, I used the other stone on the same planet. If both of them were empty, I changed the planet.
+After some time, I sticked to one of the stones of each planet (f.e. red - left and black - right). If it was empty, I changed the planet.
+Sometimes, when "all of them were empty", I chose just randomly until I found a stone and then used my old technique. 

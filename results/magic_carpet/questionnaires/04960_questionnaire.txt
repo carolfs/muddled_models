@@ -1,0 +1,5 @@
+symbol1: incorrect
+symbol2: correct
+Difficulty: difficult
+
+i just clicked on a random arrow every turn as it was not worth thinking too much for such a random distribution of coins

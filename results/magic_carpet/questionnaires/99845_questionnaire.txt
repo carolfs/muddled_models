@@ -1,0 +1,5 @@
+symbol1: correct
+symbol2: correct
+Difficulty: average
+
+always switch carpet, keep for each carpet the genius that gave you a coin last time

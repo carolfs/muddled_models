@@ -1,0 +1,1 @@
+{u'computer_name': 'EconBLULab21', u'part_number': 5, u'simultaneous': True, u'planets': (u'Black', u'Red'), u'part_code': u'B53', u'spaceships': (u'Y', u'X')}

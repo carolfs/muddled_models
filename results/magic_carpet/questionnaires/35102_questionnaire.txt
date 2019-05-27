@@ -1,0 +1,6 @@
+symbol1: correct
+symbol2: correct
+Difficulty: easy
+
+First I tried every symbol. If the symbol was successful, I stayed there until the ghost didn`t come out anymore. After that I started again to try every symbol.
+After a while I found out, that two symbols (one blue, one pink) where more successful than the others. From that moment I only tried these two. I tried one symbol as long as it was successful and returned than to the other symbol.

@@ -1,0 +1,6 @@
+symbol1: correct
+symbol2: correct
+Difficulty: very easy
+
+Select the 2 patters with the highest probability to success.
+Insist on those patters no matter what is the immediate result.
