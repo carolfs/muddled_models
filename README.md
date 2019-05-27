@@ -1,11 +1,10 @@
 This project contains the code required to run the spaceship and magic carpet tasks mentioned in the paper:
 
-Model-free or muddled models in the two-stage task?
-Carolina Feher da Silva and Todd A. Hare
+Carolina Feher da Silva and Todd A. Hare. *Model-free or muddled models in the two-stage task?*
 
 The experiments require Python 2.7 and PsychoPy 2 to run.
 They should run on standalone PsychoPy version 1.90.3.
-Just run the exp.py script in each directory.
+Just run the `exp.py `script in each directory.
 
 We used the following fonts to display the instructions for the participants:
 * Noteworthy-Bold.ttf for the spaceship task
