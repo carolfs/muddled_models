@@ -1,0 +1,181 @@
+"Thank you for agreeing to participate in this study about how people make decisions. In addition to helping our research, you can also earn money. You are expected to earn between CHF 37 to 45 for your participation.
+
+You will play a game in which you are a musician working for gold coins in a fantasy land. But first you will complete a tutorial to learn about the game story and controls, then read the instructions for the actual game. After playing the game, you will fill in a short questionnaire.
+
+The game allows you to earn money, and the tutorial allows you to learn a key part of the game. It will help you maximize your earnings during the game, so do your best to learn how to play the game during the tutorial.
+
+You can navigate these screens by pressing the arrow keys on the keyboard. If there is a right arrow on the bottom right of the screen, you can press the right arrow key to go to the next screen, and if there is a left arrow on the bottom left of the screen, you can press the left arrow key to go to the previous screen."
+
+""
+tutorial
+
+"You are a musician in a fantasy land. You play the flute for an audience of genies in return for gold coins."
+genie_coin
+reward_[color_common1]
+tibetan.[fsymbol12]
+
+"To find the genies, you travel on a magic carpet to [color_common1] Mountain and [color_common2] Mountain, where the genies live inside their magic lamps."
+flight_[color_common1]-[color1]_[color2]
+
+"Each magic lamp is marked with a symbol that is the genie’s name in the local language."
+lamps_[color_common1]
+tibetan.[fsymbol11][fsymbol12]
+left_lamp_symbol
+right_lamp_symbol
+
+"You can pick up a lamp and rub it. If the genie that lives inside is in the mood for music, he’ll come out, listen to a song, and give you a gold coin in return."
+genie_coin
+reward_[color_common1]
+tibetan.[fsymbol11]
+
+"But sometimes the genie won’t be interested and will just stay inside his lamp. In this case, you won’t get a gold coin."
+genie_zero
+reward_[color_common1]
+tibetan.[fsymbol12]
+
+"It is hard to tell how interested in music each genie is, because genies are very shy, but if a genie will often come out of his lamp to listen to your songs, he is probably interested in music."
+genie_coin
+reward_[color_common2]
+tibetan.[fsymbol22]
+
+"A genie’s interest in music may also change with time. A genie that is initially interested in music may later lose interest, or vice versa."
+genie_zero
+reward_[color_common2]
+tibetan.[fsymbol21]
+
+"If you recently visited a certain genie and he gave you a gold coin for a song, this genie may be currently interested in music and it may be a good idea to visit him again."
+genie_coin
+reward_[color_common1]
+tibetan.[fsymbol12]
+
+"But if the genie stayed inside his lamp, he may not be very interested in music, and it may be a better idea to visit a different genie."
+genie_zero
+reward_[color_common1]
+tibetan.[fsymbol11]
+
+"Also, because genies are very shy, they rarely talk to each other. Each genie has his own interests, and one genie’s interest in music doesn’t influence the other genies."
+lamps_[color_common1]
+tibetan.[fsymbol12][fsymbol11]
+
+"To go to the mountains where the genies live, you fly on magic carpets that you bought from a magician."
+carpets_tutorial
+tibetan.[isymbol2][isymbol1]
+carpets_to_[color_common2]_[color_common1]
+
+"The magician enchanted one of your carpets, shown below, to fly to [color_common2] Mountain. The symbol written on the carpet means “[color_common2] Mountain” in the local language."
+carpets_tutorial
+tibetan.[isymbol2][isymbol1]
+carpets_to_[color_common2]_[color_common1]
+left_carpet_destination
+
+"The magician also enchanted your other carpet, shown below, to fly to [color_common1] Mountain. The symbol written on the carpet means “[color_common1] Mountain” in the local language."
+carpets_tutorial
+tibetan.[isymbol2][isymbol1]
+carpets_to_[color_common2]_[color_common1]
+right_carpet_destination
+
+"After you decide which genie you want to visit, you should fly to the mountain where he lives."
+flight_[color_common1]-[color1]_[color2]
+
+"If you want to visit a genie that lives on [color_common2] Mountain, you should fly on the carpet shown below."
+carpets_tutorial
+tibetan.[isymbol2][isymbol1]
+carpets_to_[color_common2]_[color_common1]
+left_carpet_destination
+
+"If you want to visit a genie that lives on [color_common1] Mountain, you should fly on your other carpet shown below."
+carpets_tutorial
+tibetan.[isymbol2][isymbol1]
+carpets_to_[color_common2]_[color_common1]
+right_carpet_destination
+
+"Sometimes your carpets will be on different sides of the room, because each time you want to use them, you take them out of a cupboard and might put them down in different positions."
+carpets_tutorial
+tibetan.[isymbol1][isymbol2]
+carpets_to_[color_common1]_[color_common2]
+
+"You can always identify each carpet by the symbols written on them."
+carpets_tutorial
+tibetan.[isymbol1][isymbol2]
+carpets_to_[color_common1]_[color_common2]
+tutorial_carpet_symbols
+
+"When the borders of your magic carpets start glowing, you can use the left and right arrow keys to choose a carpet. The left arrow key chooses the carpet on the left …"
+carpets_glow_tutorial
+tibetan.[isymbol1][isymbol2]
+carpets_to_[color_common1]_[color_common2]
+left_carpet_destination
+
+"… and the right arrow key chooses the carpet on the right."
+carpets_glow_tutorial
+tibetan.[isymbol1][isymbol2]
+carpets_to_[color_common1]_[color_common2]
+right_carpet_destination
+
+"After the carpets’ borders start glowing, you have 2 seconds to choose a carpet and jump on it, otherwise they will fly away without you! (Don’t worry, they’ll come back eventually.)"
+slow1
+
+"After you choose a carpet, you will jump on it and fly away. Most of the flights to [color_common1] Mountain and [color_common2] Mountain end successfully with the carpet landing at the planned destination."
+flight_[color_common2]-[color1]_[color2]
+
+"But more rarely a strong wind will blow near the mountain where you want to go, and it’s dangerous to fly there, because the wind might blow you off the carpet."
+flight_[color_common1]-[color1]_[color2]-wind
+
+"When this happens, you will drive your carpet to the other mountain and do an emergency landing there."
+flight_[color_common1]-[color1]_[color2]-wind
+
+"On most days the weather will be good for flying, but strong winds may appear randomly. It is impossible to tell when the wind will start and stop, and the wind is equally likely to blow near [color_common2] Mountain and [color_common1] Mountain."
+flight_[color_common2]-[color1]_[color2]-wind
+
+"Let’s say you decided to go to [color_common1] Mountain, because during your last two trips there a genie came out of his lamp to listen to a song, and you think this genie is currently interested in music."
+genie_coin
+reward_[color_common1]
+tibetan.[fsymbol11]
+
+"So you choose to fly on the carpet that was enchanted to fly to [color_common1] Mountain."
+carpets_tutorial
+tibetan.[isymbol1][isymbol2]
+carpets_to_[color_common1]_[color_common2]
+tutorial_left_carpet_selected
+
+"Unfortunately, a strong wind is blowing near [color_common1] Mountain and for your safety you decide to land your carpet on [color_common2] Mountain instead."
+flight_[color_common2]-[color1]_[color2]-wind
+
+"Not all is lost. You can still see if a genie from [color_common2] Mountain wants to hear you play the flute."
+lamps_[color_common2]
+tibetan.[fsymbol21][fsymbol22]
+
+"There are two lamps on each mountain, each marked with a different symbol, which is the name of the genie inside. You can only rub one lamp during each trip, because after a while the genies go to sleep."
+lamps_[color_common2]
+tibetan.[fsymbol21][fsymbol22]
+
+"After you land on a mountain, the lamps will begin to glow, and you should press the left arrow key to rub the lamp on the left or the right arrow key to rub the lamp on the right."
+lamps_[color_common2]_glow
+tibetan.[fsymbol21][fsymbol22]
+
+"You must decide quickly which one you’re going to rub. If you take more than 2 seconds to make your choice, the genies will assume there won’t be any music and go to sleep."
+lamps_[color_common2]
+slow2
+
+"The same lamp will be sometimes on the left and sometimes on the right, because each time you pick up a lamp to rub it you might put it down later in a different place."
+lamps_[color_common2]
+tibetan.[fsymbol22][fsymbol21]
+
+"Just pay attention to the genie’s name written on the lamp so that later you’ll remember which lamp you chose."
+lamps_[color_common2]
+tibetan.[fsymbol22][fsymbol21]
+left_lamp_symbol
+right_lamp_symbol
+
+"Maybe the genie that lives inside the lamp you chose isn’t interested in music and will stay inside his lamp. You’ll then have to go back home without a gold coin."
+genie_zero
+reward_[color_common2]
+tibetan.[fsymbol22]
+
+"But maybe the genie will come out, enjoy your music, and give you some money."
+genie_coin
+reward_[color_common2]
+tibetan.[fsymbol21]
+
+"You can now press space to take a short quiz on these instructions or press the left arrow key to read these instructions again."
+quiz

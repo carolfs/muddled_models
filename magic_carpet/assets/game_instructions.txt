@@ -1,0 +1,92 @@
+""
+game
+
+"The game is about to start. You will make [num_trials] flights to the mountains and get paid for every gold coin the genies give you."
+flight_[color_common1]-[color1]_[color2]
+
+"You will explore other mountains now: [color_common1] Mountain and [color_common2] Mountain. You have bought a new pair of magic carpets to take you there."
+flight_[color_common1]-[color1]_[color2]-wind
+
+"Your new carpets are shown below. One has been enchanted by a magician to fly to [color1] Mountain and the other to [color2] Mountain. The symbols written on the carpets mean “[color_common1] Mountain” and “[color_common2] Mountain.”"
+carpets
+tibetan.[isymbol2][isymbol1]
+
+"Sometimes your carpets will be on different sides of the room, because each time you want to use them, you take them out of a cupboard and might put them down in different positions."
+carpets
+tibetan.[isymbol1][isymbol2]
+
+"The carpets have also been upgraded to be completely self-driving. They will automatically try to fly to the mountain whose name is written on them, but if the wind is too dangerous, a safety procedure will be activated and the carpets will land on the other mountain."
+carpets
+tibetan.[isymbol2][isymbol1]
+
+"You have already tested your new self-driving carpets and they work perfectly. Because these flights are long and boring, you will now sleep through them and just wake up at your destination."
+nap
+
+"The carpets’ borders will immediately start to glow, and you have 2 seconds to select a carpet before they fly away without you."
+carpets_glow
+tibetan.[isymbol1][isymbol2]
+
+"After you select a carpet, the screen will briefly turn black, because you’ll be taking a nap and only wake up when you are already on one of the mountains."
+nap
+
+"During the game, you’ll have to figure out by yourself which symbol means “[color1] Mountain” and which means “[color2] Mountain.” This should be easy, because each carpet will land more often on the mountain whose name is written on it."
+carpets
+tibetan.[isymbol2][isymbol1]
+
+"For example, the carpet with the symbol that means “[color_common2] Mountain” will always try to land on [color_common2] Mountain, unless the wind forces it to land on [color_common1] Mountain, which happens more rarely."
+flight_[color_common2]-[color1]_[color2]
+
+"The wind blows unpredictably and is equally likely to blow near both mountains. You can never predict when it will start or stop."
+flight_[color_common1]-[color1]_[color2]-wind
+
+"During a flight, you won’t see the wind blowing because you’ll be sleeping comfortably on your self-driving carpet."
+nap
+
+"On a mountain, the lamps will immediately start to glow, and you should press the left or right arrow key to choose a lamp."
+lamps_[color_common1]
+tibetan.[fsymbol11][fsymbol12]
+
+"Each lamp has the name of the genie that lives inside it written on it."
+lamps_[color_common1]
+tibetan.[fsymbol11][fsymbol12]
+left_lamp_symbol
+right_lamp_symbol
+
+"The same lamp will be sometimes on the left and sometimes on the right, because each time you pick up a lamp to rub it you might put it down later in a different place."
+lamps_[color_common1]
+tibetan.[fsymbol12][fsymbol11]
+
+"You must decide quickly which lamp you’re going to rub. If you take more than 2 seconds to make your choice, the genies will assume there won’t be any music and go to sleep."
+lamps_[color_common1]
+slow2
+
+"Remember that when a genie is currently interested in music, he’ll probably come out of his lamp and give you a coin."
+genie_coin
+reward_[color_common1]
+tibetan.[fsymbol11]
+
+"But when a genie isn’t very interested in music, he’ll tend to stay inside his lamp."
+genie_zero
+reward_[color_common1]
+tibetan.[fsymbol12]
+
+"It is hard to tell how interested in music each genie currently is, but if a genie will often come out of his lamp to listen to your songs, he is probably interested."
+genie_coin
+reward_[color_common2]
+tibetan.[fsymbol21]
+
+"Each genie may be more or less interested in music, and their interest may change with time."
+lamps_[color_common2]
+tibetan.[fsymbol22][fsymbol21]
+
+"Each gold coin the genies give you is worth CHF 0.37 in our world. Good luck getting them!"
+genie_coin
+reward_[color_common2]
+tibetan.[fsymbol21]
+
+"If the word BREAK appears on the screen, you can take a short break before continuing the game."
+break_instructions
+
+"You can start the game now by pressing space or you can press left to go back to these instructions."
+flight_[color_common1]-[color1]_[color2]
+space

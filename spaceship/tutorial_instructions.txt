@@ -1,0 +1,119 @@
+"Thank you for agreeing to participate in this study about how people make decisions. In addition to helping our research, you can also earn money. You are expected to earn between CHF 35 to 45 for your participation.
+
+You will play a game in which you are a space explorer searching for alien crystals on alien planets. But first you will complete a tutorial to learn about the game story and controls, then read the instructions for the actual game and take a quiz on the game’s instructions. After playing the game, you will fill in a short questionnaire.
+
+The game allows you to earn money, and the tutorial and the quiz allow you to learn a key part of the game. They will help you maximize your earnings during the game, so do your best to learn how to play the game during the tutorial and the quiz.
+
+You can navigate these screens by pressing the arrow keys on the keyboard. If there is a right arrow on the bottom right of the screen, you can press the right arrow key to go to the next screen, and if there is a left arrow on the bottom left of the screen, you can press the left arrow key to go to the previous screen."
+
+"Tutorial"
+
+"It is year 2376, and you are a space explorer. You fly on spaceships to different planets and explore them for precious stones."
+1_astronaut
+
+"Your current job consists of flying to planets [planet0] and [planet1] to search for special alien crystals with healing power. The crystals will be later sold in the intergalactic market for profit."
+1_astronaut
+
+"These crystals are found inside obelisks that were left on the surfaces of some planets by an old alien civilization. These obelisks grow crystals like oysters grow pearls."
+Pillar_Crystal_[planet0]_Right
+
+"Obelisks will grow crystals faster or slower depending on the natural levels of gamma radiation at their location. If you visit an obelisk when the levels are good for growing crystals, you’ll probably find a crystal inside it."
+Pillar_Crystal_[planet0]_Right
+
+"But sometimes you’ll find that an obelisk is empty, especially if you visit it when the radiation levels are bad for growing crystals."
+Pillar_Empty_[planet0]_Right
+
+"Measuring gamma radiation is too complicated, but if you can often find crystals inside an obelisk, the levels there are probably good."
+Pillar_Crystal_[planet0]_Right
+
+"The gamma radiation levels can be different at different locations, even on the same planet. Also, the levels change slowly with time."
+Pillar_Empty_[planet0]_Right
+
+"To start exploring for crystals, you must first decide if you want to take a spaceship to planet [planet0] …"
+SS_[spaceship0]_[planet0]_Left
+
+"… or a spaceship to planet [planet1]."
+SS_[spaceship1]_[planet1]_Right
+
+"If you found crystals inside a certain obelisk during your latest trips to planet [planet0], the gamma radiation levels there were probably good and it might be a good idea to go to that obelisk again."
+[planet0]_X_[planet1]
+
+"If you found that a certain obelisk on planet [planet0] was often empty, the gamma radiation levels there were probably bad, and it might be a better idea to go to a different obelisk on planet [planet0] or [planet1]."
+[planet0]_X_[planet1]
+
+"After you decide which planet you want to visit, you should find out which spaceship will fly to that planet and book the flight. Two spaceships fly frequently to planets [planet0] and [planet1]: spaceships [spaceship0] and [spaceship1]."
+[planet0]_[planet1]_[spaceship0][spaceship1]
+
+"Spaceships [spaceship0] and [spaceship1] always fly to different planets. When spaceship [spaceship0] flies to planet [planet0], spaceship [spaceship1] flies to planet [planet1], and vice versa."
+[planet0]_[planet1]_[spaceship0][spaceship1]
+
+"Here is the ticket machine you can use to buy tickets to planets [planet0] and [planet1]."
+Ticket_[spaceship0][spaceship1]_[spaceship1]-[planet1]
+Ticket_EMPTY
+
+"The board above the ticket machine will announce the next departure. It will display the names of the spaceship and its destination planet."
+Ticket_[spaceship0][spaceship1]_[spaceship1]-[planet1]
+
+"In this example, the board shows that spaceship [spaceship1] will fly to planet [planet1]. If you want to fly to planet [planet1], you should book a flight on spaceship [spaceship1]."
+Ticket_[spaceship0][spaceship1]_[spaceship1]-[planet1]
+
+"Since spaceship [spaceship1] will fly to planet [planet1], spaceship [spaceship0] will fly to planet [planet0]. So if you want to fly to planet [planet0], you should book a flight on spaceship [spaceship0]."
+Ticket_[spaceship0][spaceship1]_[spaceship1]-[planet1]
+
+"When the ticket machine’s buttons turn green, you can use the left and right arrow key to buy tickets. The left arrow key selects a ticket for the next flight on spaceship [spaceship0] …"
+Ticket_[spaceship0][spaceship1]_[spaceship1]-[planet1]
+left_option
+
+"… and the right arrow key selects a ticket for the next flight on spaceship [spaceship1]."
+Ticket_[spaceship0][spaceship1]_[spaceship1]-[planet1]
+right_option
+
+"A lot of people are interested in flying to planets [planet0] and [planet1]. After the ticket machine’s buttons turn green, you have only 2 seconds to buy a ticket before all tickets are sold out."
+Ticket_[spaceship0][spaceship1]_[spaceship1]-[planet1]
+Ticket_EMPTY
+sold_out
+
+"After you buy a ticket, you will board your chosen spaceship. Most of the flights to planets [planet0] and [planet1] end successfully with the spaceship landing on the planned destination."
+SS_[spaceship1]_[planet0]_Left
+
+"But more rarely an asteroid cloud blocks all paths to a planet and the spaceship is forced to do an emergency landing on the other planet."
+SS_[spaceship1]_[planet1]_Right_EM
+
+"This happens in about 1 flight out of 3. Asteroid clouds appear unpredictably and it is impossible to tell in advance when this will happen. They can appear anywhere and are equally likely to block both spaceships and planets."
+SS_[spaceship1]_[planet1]_Right_EM
+
+"Let’s say you decide to go to planet [planet0], because during your last two trips there you got lucky and found a crystal inside a certain obelisk, and you think the current radiation levels at that obelisk’s location are good."
+Landing_[planet0]
+
+"You learn that spaceship [spaceship1] is flying to planet [planet0] and you buy a ticket for a flight on spaceship [spaceship1] before all tickets are sold out."
+Ticket_[spaceship0][spaceship1]_[spaceship1]-[planet0]
+
+"Unfortunately, an asteroid cloud is blocking spaceship [spaceship1]’s path to planet [planet0] and the spaceship is forced to land on planet [planet1] instead."
+SS_[spaceship1]_[planet1]_Right_EM
+
+"Not all is lost. You can still go search for crystals on planet [planet1]."
+Landing_[planet1]
+
+"There are two obelisks on each planet: the left and right obelisk. You can only visit one of them during each trip, because they are far from each other and you only have enough oxygen in your tank to walk to one obelisk and back to your spaceship."
+choice2_[planet1]
+2choice_green_arrows
+
+"After you land on a planet, you should press the left arrow key to go to the left obelisk or the right arrow key to go to the right obelisk."
+choice2_[planet1]
+2choice_green_arrows
+
+"You must decide quickly which obelisk you’re going to visit. If you take more than 2 seconds to make your decision, you won’t have enough oxygen left in your tank to walk to the obelisk and back to the spaceship."
+choice2_[planet1]
+2choice_slow
+
+"Maybe the obelisk you choose to visit will be empty. You’ll then have to go back home without a crystal to sell."
+Pillar_Empty_[planet1]_Left
+
+"But maybe you’ll find a crystal inside the obelisk and make some money."
+Pillar_Crystal_[planet1]_Left
+
+"Crystals are currently sold for 1099 Intergalactic Gold Coins at the Intergalactic Market."
+Pillar_Crystal_[planet1]_Left
+
+"You will now practice flying to planets [planet0] and [planet1] and searching for crystals."
+1_astronaut

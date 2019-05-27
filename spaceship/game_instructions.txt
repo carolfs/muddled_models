@@ -1,0 +1,49 @@
+"Game Instructions"
+
+"When the game starts, several months have passed since you took your practice flights, and the gamma radiation levels near each obelisk have changed."
+1_astronaut
+
+"During the game, you will make 250 flights and get paid for each crystal you find."
+Ticket_[spaceship0][spaceship1]_[spaceship1]-[planet0]
+
+"The first step in each trip is to buy a ticket from the ticket machine. Information about the next departure will flash on the board above the machine. Pay attention to learn which spaceship will fly to which planet!"
+Ticket_[spaceship0][spaceship1]_[spaceship1]-[planet0]
+
+"As soon as the ticket machine’s buttons turn green, you have 2 seconds to buy your ticket using the left or right arrow key. Helpful messages will no longer appear."
+Ticket_[spaceship0][spaceship1]_[spaceship1]-[planet0]
+Ticket_EMPTY
+tickets_available
+
+"After that, you will usually fly to the planned destination …"
+SS_[spaceship0]_[planet1]_Left
+
+"… but in about 1 flight out of 3 an asteroid cloud will block your spaceship’s path and the spaceship will be forced to land on a different planet."
+SS_[spaceship0]_[planet0]_Right_Em
+
+"Asteroid clouds appear unpredictably and it is impossible to tell in advance when this will happen. They are equally likely to block both spaceships and planets."
+SS_[spaceship0]_[planet0]_Right_Em
+
+"You will then arrive on a planet. You should press the left arrow key to go to the left obelisk or the right arrow key to go to the right obelisk."
+choice2_[planet0]
+2choice_green_arrows
+
+"Remember that when the gamma radiation levels near an obelisk are good for growing crystals, the obelisk will grow crystals faster and you will often find crystals there."
+Pillar_Crystal_[planet0]_Left
+
+"When the gamma radiation levels near an obelisk are bad for growing crystals, the obelisk will grow crystals slower and you will often find it empty."
+Pillar_Empty_[planet0]_Right
+
+"It’s hard to know when the gamma radiation levels will be good or bad, but if you can often find crystals inside an obelisk, the levels there are probably good at the moment."
+Pillar_Crystal_[planet1]_Right
+
+"The gamma radiation levels vary naturally from place to place, even on the same planet. Also, the levels change slowly with time."
+Pillar_Empty_[planet1]_Left
+
+"Each crystal is worth 1099 intergalactic gold coins (IGC) in the intergalactic market.  Unfortunately, because of inflation, IGC 1099 in year 2376 is equal to only CHF 0.29 in year 2018, so this is what you’ll get for each crystal you find. Good luck finding them!"
+Pillar_Crystal_[planet1]_Right
+
+"If the word BREAK appears on the screen, you can take a short break. To continue the game after a break, press the space bar."
+break_screen
+
+"Before you start playing the game, you will take a short quiz on these instructions."
+quiz_screen

@@ -1,0 +1,9 @@
+"You have finished the quiz. Before the game starts, you will do [num_trials] tutorial flights to the mountains."
+flight_[color_common2]-[color1]_[color2]
+
+"To guide you through the tutorial flights, helpful messages will appear on the screen during the first few flights. Please read them carefully, because later on they will no longer appear."
+flight_[color_common2]-[color1]_[color2]-wind
+
+"Press space now to start the tutorial flights."
+flight_[color_common1]-[color1]_[color2]
+space
