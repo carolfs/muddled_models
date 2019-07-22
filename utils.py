@@ -74,8 +74,8 @@ def get_random_fstate(choice):
     return 1 - choice
 
 # Link to the data from Kool et al. (2016) we analyzed in this paper
-KOOL_2016_DATA = 'https://github.com/wkool/tradeoffs/blob/master/data/daw%20paradigm/data.mat?raw=true'
-KOOL_2016_VARS = {
+COMMON_INSTR_DATA = 'https://github.com/wkool/tradeoffs/blob/master/data/daw%20paradigm/data.mat?raw=true'
+COMMON_INSTR_VARS = {
     'stim_1_left': 1,
     'stim_1_right': 2,
     'rt_1': 3,
@@ -94,12 +94,12 @@ KOOL_2016_VARS = {
     'ps2a2': 17,
     'trial': 18,
 }
-KOOL_2016_CSV_FILE = 'results/kool_2016_data.csv'
+COMMON_INSTR_CSV_FILE = 'results/common_instr_data.csv'
 
-def load_kool_2016_data():
+def load_common_instr_data():
     "Loads the data from Kool et al. (2016) as a pandas DataFrame."
-    if not os.path.exists(KOOL_2016_CSV_FILE):
-        fetch_kool_2016_data()
+    if not os.path.exists(COMMON_INSTR_CSV_FILE):
+        fetch_common_instr_data()
     dtype = {
         'participant': int,
         'stim_1_left': int,
@@ -116,17 +116,17 @@ def load_kool_2016_data():
         'score': int,
         'trial': int,
     }
-    data = pd.read_csv(KOOL_2016_CSV_FILE, dtype=dtype)
+    data = pd.read_csv(COMMON_INSTR_CSV_FILE, dtype=dtype)
     return data
 
-def fetch_kool_2016_data():
+def fetch_common_instr_data():
     "Fetches the data from Kool et al. (2016) off its Github repository."
-    data = requests.get(KOOL_2016_DATA)
+    data = requests.get(COMMON_INSTR_DATA)
     data = loadmat(io.BytesIO(data.content))['data']
-    name_vars = list(KOOL_2016_VARS.keys())
+    name_vars = list(COMMON_INSTR_VARS.keys())
     name_vars.sort()
     try:
-        with open(KOOL_2016_CSV_FILE, 'w') as outf:
+        with open(COMMON_INSTR_CSV_FILE, 'w') as outf:
             outf.write('participant,{}\n'.format(','.join(name_vars)))
             for trial in data:
                 # Exclude practice trials
@@ -137,9 +137,9 @@ def fetch_kool_2016_data():
                 assert participant < 206
                 values = []
                 for var in name_vars:
-                    value = trial[KOOL_2016_VARS[var]][0][0]
+                    value = trial[COMMON_INSTR_VARS[var]][0][0]
                     values.append(str(value))
                 outf.write('{},{}\n'.format(participant, ','.join(values)))
     except:
-        os.remove(KOOL_2016_CSV_FILE)
+        os.remove(COMMON_INSTR_CSV_FILE)
         raise
