@@ -1,6 +1,6 @@
 This project contains the code required to run the spaceship and magic carpet tasks mentioned in the paper:
 
-Carolina Feher da Silva and Todd A. Hare. *Model-free or muddled models in the two-stage task?*
+Carolina Feher da Silva and Todd A. Hare. *Humans are primarily model-based and not model-free learners in the two-stage task*
 
 The experiments require Python 2.7 and PsychoPy 2 to run.
 They should run on standalone PsychoPy version 1.90.3.
