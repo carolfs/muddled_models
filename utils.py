@@ -47,6 +47,14 @@ RWRD_PROB_DIFFUSION_RATE = 0.025
 COMMON_PROB = 0.7
 
 @jit
+def expit(x):
+    "The logistic function, using numba"
+    if x < -200:
+        return np.exp(x) # Approximation
+    else:
+        return 1/(1 + np.exp(-x))
+
+@jit
 def get_random_reward(fstate, choice2, rwrd_probs):
     "Get a reward (0 or 1) with this probability."
     return int(random.random() < rwrd_probs[2*fstate + choice2])
