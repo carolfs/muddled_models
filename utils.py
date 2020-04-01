@@ -102,7 +102,8 @@ COMMON_INSTR_VARS = {
     'ps2a2': 17,
     'trial': 18,
 }
-COMMON_INSTR_CSV_FILE = os.path.join('results', 'common_instr_data.csv')
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+COMMON_INSTR_CSV_FILE = os.path.join(PROJECT_DIR, 'results', 'common_instr_data.csv')
 
 def load_common_instr_data():
     "Loads the data from Kool et al. (2016) as a pandas DataFrame."
@@ -126,6 +127,23 @@ def load_common_instr_data():
     }
     data = pd.read_csv(COMMON_INSTR_CSV_FILE, dtype=dtype)
     return data
+
+def load_magic_carpet_data():
+    "Loads the data from the magic carpet experiment as a pandas DataFrame."
+    data_dir = os.path.join(PROJECT_DIR, 'results', 'magic_carpet', 'choices')
+    return pd.concat((
+        pd.read_csv(os.path.join(data_dir, flnm)).assign(participant=flnm.split('_')[0])
+        for flnm in os.listdir(data_dir) if flnm.endswith('_game.csv')))
+
+def load_spaceship_data():
+    "Loads the data from the spaceship experiment as a pandas DataFrame."
+    data_dir = os.path.join(PROJECT_DIR, 'results', 'spaceship', 'choices')
+    ssdf = pd.concat((
+        pd.read_csv(os.path.join(data_dir, flnm)).assign(participant=flnm.split('.')[0])
+        for flnm in os.listdir(data_dir) \
+        if flnm.endswith('.csv') and not flnm.endswith('_practice.csv')))
+    ssdf['init_state'] = ssdf.symbol0*2 + ssdf.symbol1
+    return ssdf
 
 def fetch_common_instr_data():
     "Fetches the data from Kool et al. (2016) off its Github repository."
