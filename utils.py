@@ -94,7 +94,7 @@ COMMON_INSTR_VARS = {
     'ps2a2': 17,
     'trial': 18,
 }
-COMMON_INSTR_CSV_FILE = 'results/common_instr_data.csv'
+COMMON_INSTR_CSV_FILE = os.path.join('results', 'common_instr_data.csv')
 
 def load_common_instr_data():
     "Loads the data from Kool et al. (2016) as a pandas DataFrame."
