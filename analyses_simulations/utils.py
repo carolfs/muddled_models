@@ -18,6 +18,7 @@
 import os
 import pickle
 import random
+import sys
 import io
 import pystan
 import numpy as np
@@ -27,6 +28,8 @@ import requests
 from scipy.io import loadmat
 
 ANALYSES_DIR = os.path.dirname(os.path.abspath(__file__))
+PLOTS_DIR = os.path.join(ANALYSES_DIR, 'plots')
+RESULTS_DIR = os.path.join(ANALYSES_DIR, 'results')
 PROJECT_DIR = os.path.join(ANALYSES_DIR, '..')
 
 def get_stan_model(textfn, binfn):
@@ -172,3 +175,28 @@ def fetch_common_instr_data():
     except:
         os.remove(COMMON_INSTR_CSV_FILE)
         raise
+
+class CouldNotFitException(Exception):
+    "Exception when Stan model could not be fitted by max likelihoood"
+
+def fit_stan_model_maxlik(stan_model, model_dat, num_fits=10):
+    """Fits a Stan model to data to get the maximum likelihood parameters."""
+    log_lik = -np.inf
+    params = None
+    errors = 0
+    for _ in range(num_fits):
+        while True:
+            try:
+                op_result = stan_model.optimizing(data=model_dat, as_vector=False, iter=5000)
+            except RuntimeError:
+                errors += 1
+                if errors > 100:
+                    sys.stderr.write('Could not fit model to data\n')
+                    raise CouldNotFitException
+                continue
+            else:
+                break
+        if op_result['value'] > log_lik:
+            log_lik = op_result['value']
+            params = op_result['par']
+    return params

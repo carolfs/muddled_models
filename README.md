@@ -21,3 +21,4 @@ The behavioral data (choices and questionnaires) can be found in the `results`
 directory.
 
 The data analyses and simulations are still being added to this repository.
+They use Python 3.6 and the `Pipenv` package to manage dependencies.
