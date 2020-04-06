@@ -26,6 +26,9 @@ from numba import jit, vectorize, float64
 import requests
 from scipy.io import loadmat
 
+ANALYSES_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_DIR = os.path.join(ANALYSES_DIR, '..')
+
 def get_stan_model(textfn, binfn):
     """Loads a Stan model, compiling it if necessary."""
     assert textfn != binfn
@@ -82,7 +85,8 @@ def get_random_fstate(choice):
     return 1 - choice
 
 # Link to the data from Kool et al. (2016) we analyzed in this paper
-COMMON_INSTR_DATA = 'https://github.com/wkool/tradeoffs/blob/master/data/daw%20paradigm/data.mat?raw=true'
+COMMON_INSTR_DATA = 'https://github.com/wkool/tradeoffs/blob/master/data/'\
+    'daw%20paradigm/data.mat?raw=true'
 COMMON_INSTR_VARS = {
     'stim_1_left': 1,
     'stim_1_right': 2,
@@ -102,7 +106,6 @@ COMMON_INSTR_VARS = {
     'ps2a2': 17,
     'trial': 18,
 }
-PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 COMMON_INSTR_CSV_FILE = os.path.join(PROJECT_DIR, 'results', 'common_instr_data.csv')
 
 def load_common_instr_data():
