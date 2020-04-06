@@ -133,7 +133,7 @@ def load_magic_carpet_data():
     data_dir = os.path.join(PROJECT_DIR, 'results', 'magic_carpet', 'choices')
     return pd.concat((
         pd.read_csv(os.path.join(data_dir, flnm)).assign(participant=flnm.split('_')[0])
-        for flnm in os.listdir(data_dir) if flnm.endswith('_game.csv')))
+        for flnm in os.listdir(data_dir) if flnm.endswith('_game.csv'))).reset_index()
 
 def load_spaceship_data():
     "Loads the data from the spaceship experiment as a pandas DataFrame."
@@ -143,7 +143,7 @@ def load_spaceship_data():
         for flnm in os.listdir(data_dir) \
         if flnm.endswith('.csv') and not flnm.endswith('_practice.csv')))
     ssdf['init_state'] = ssdf.symbol0*2 + ssdf.symbol1
-    return ssdf
+    return ssdf.reset_index()
 
 def fetch_common_instr_data():
     "Fetches the data from Kool et al. (2016) off its Github repository."
