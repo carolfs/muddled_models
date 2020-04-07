@@ -21,7 +21,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from . utils import create_random_rwrd_probs, expit, get_random_fstate,\
     get_random_reward, diffuse_rwrd_probs, fit_stan_model_maxlik,\
-    CouldNotFitException, get_stan_model, PLOTS_DIR, RESULTS_DIR
+    CouldNotFitException, get_stan_model, PLOTS_DIR, RESULTS_DIR, MODELS_DIR
 
 # Number of trials each simulated agent will perform
 NUM_TRIALS = 1000
@@ -31,7 +31,6 @@ ALPHA, BETA, ETA = 0.5, 5.0, 0.5
 # Different learning rates for the TDLR model
 ALPHA_COMMON, ALPHA_RARE = 0.8, 0.2
 
-@jit
 def mb_correct(alpha, beta):
     """Simulation of a correct model-based strategy."""
     value = np.zeros((2, 2))
@@ -65,7 +64,6 @@ def mb_unlucky_symbol(alpha, beta, eta):
         rwrd_probs = diffuse_rwrd_probs(rwrd_probs)
         yield (choice1, fstate, choice2, reward)
 
-@jit
 def mb_tdlr(alpha_common, alpha_rare, beta):
     """Simulation of the transition-dependent learning rates model-based strategy."""
     value = np.zeros((2, 2))
@@ -105,8 +103,6 @@ class StayProbabilitiesCalculator:
         num, den = self.stay[2*reward + transition]
         return num/den
 
-# Directory where the hybrid model's Stan implementation is saved
-MODELS_DIR = 'models'
 # Parameters of the hybrid model
 HYBRID_PARAMS = ('alpha1', 'alpha2', 'lmbd', 'beta1', 'beta2', 'w', 'p')
 
