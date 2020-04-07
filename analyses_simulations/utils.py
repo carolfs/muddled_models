@@ -20,6 +20,9 @@ import pickle
 import random
 import sys
 import io
+import re
+import tempfile
+import math
 import pystan
 import numpy as np
 import pandas as pd
@@ -31,6 +34,7 @@ ANALYSES_DIR = os.path.dirname(os.path.abspath(__file__))
 PLOTS_DIR = os.path.join(ANALYSES_DIR, 'plots')
 RESULTS_DIR = os.path.join(ANALYSES_DIR, 'results')
 PROJECT_DIR = os.path.join(ANALYSES_DIR, '..')
+MODELS_DIR = os.path.join(ANALYSES_DIR, 'models')
 
 def get_stan_model(textfn, binfn):
     """Loads a Stan model, compiling it if necessary."""
@@ -200,3 +204,67 @@ def fit_stan_model_maxlik(stan_model, model_dat, num_fits=10):
             log_lik = op_result['value']
             params = op_result['par']
     return params
+
+def load_stan_csv(csvfn):
+    """Loads only post-adaptation Stan samples from a CSV file"""
+    with tempfile.TemporaryFile('w+') as outf:
+        with open(csvfn) as inpf:
+            column_names = []
+            adaptation = True
+            for line in inpf.readlines():
+                if adaptation:
+                    if line.startswith('#'):
+                        if line.startswith('# Adaptation terminated'):
+                            adaptation = False
+                    elif not column_names:
+                        column_names = line.strip().split(',')
+                else:
+                    outf.write(line)
+        outf.seek(0)
+        samples = pd.read_csv(outf, names=column_names, comment='#')
+    return samples
+
+def load_stan_csv_chains(csvfn):
+    "Loads multiple chains of Stan samples from CSV files"
+    dirname = os.path.dirname(os.path.abspath(csvfn))
+    sample_fn_re = re.compile(r'{}(_\d+)?\.csv'.format(
+        os.path.splitext(os.path.basename(csvfn))[0]))
+    samples = None
+    if not os.path.exists(dirname):
+        raise ValueError("Directory {} does not exist".format(dirname))
+    for fn in os.listdir(dirname):
+        if sample_fn_re.match(fn):
+            if samples is None:
+                samples = load_stan_csv(os.path.join(dirname, fn))
+            else:
+                samples = pd.concat(
+                    (samples, load_stan_csv(os.path.join(dirname, fn))))
+    return samples
+
+def hpd(sampleVec, credMass=0.95):
+    # Adapted from:
+    #   Kruschke, J. K. (2015). Doing Bayesian Data Analysis, Second Edition: 
+    #   A Tutorial with R, JAGS, and Stan. Academic Press / Elsevier.
+    # https://sites.google.com/site/doingbayesiandataanalysis/software-installation
+    # Computes highest density interval from a sample of representative values,
+    #   estimated as shortest credible interval.
+    # Arguments:
+    #   sampleVec
+    #     is a vector of representative values from a probability distribution.
+    #   credMass
+    #     is a scalar between 0 and 1, indicating the mass within the credible
+    #     interval that is to be estimated.
+    # Value:
+    #   HDIlim is a vector containing the limits of the HDI
+    sortedPts = list(sampleVec)
+    sortedPts.sort()
+    ciIdxInc = math.ceil(credMass * len(sortedPts))
+    nCIs = len(sortedPts) - ciIdxInc
+    ciWidth = [0] * nCIs
+    for i in range(nCIs):
+        ciWidth[i] = sortedPts[i + ciIdxInc] - sortedPts[i]
+    j = ciWidth.index(min(ciWidth))
+    HDImin = sortedPts[j]
+    HDImax = sortedPts[j + ciIdxInc]
+    HDIlim = (HDImin, HDImax)
+    return HDIlim
