@@ -242,20 +242,23 @@ def load_stan_csv_chains(csvfn):
     return samples
 
 def hpd(sampleVec, credMass=0.95):
-    # Adapted from:
-    #   Kruschke, J. K. (2015). Doing Bayesian Data Analysis, Second Edition: 
-    #   A Tutorial with R, JAGS, and Stan. Academic Press / Elsevier.
-    # https://sites.google.com/site/doingbayesiandataanalysis/software-installation
-    # Computes highest density interval from a sample of representative values,
-    #   estimated as shortest credible interval.
-    # Arguments:
-    #   sampleVec
-    #     is a vector of representative values from a probability distribution.
-    #   credMass
-    #     is a scalar between 0 and 1, indicating the mass within the credible
-    #     interval that is to be estimated.
-    # Value:
-    #   HDIlim is a vector containing the limits of the HDI
+    """
+    Computes highest density interval from a sample of representative values,
+      estimated as shortest credible interval.
+    Arguments:
+      sampleVec
+        is a vector of representative values from a probability distribution.
+      credMass
+        is a scalar between 0 and 1, indicating the mass within the credible
+        interval that is to be estimated.
+    Value:
+      HDIlim is a vector containing the limits of the HDI
+    
+    Adapted from:
+      Kruschke, J. K. (2015). Doing Bayesian Data Analysis, Second Edition: 
+      A Tutorial with R, JAGS, and Stan. Academic Press / Elsevier.
+    https://sites.google.com/site/doingbayesiandataanalysis/software-installation
+    """
     sortedPts = list(sampleVec)
     sortedPts.sort()
     ciIdxInc = math.ceil(credMass * len(sortedPts))
