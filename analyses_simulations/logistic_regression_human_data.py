@@ -14,7 +14,7 @@ magic carpet, and spaceship.
 from os.path import join, exists
 import matplotlib.pyplot as plt
 import numpy as np
-from . import utils
+import utils
 
 def get_spaceship_choice1(trial):
     """Changes choice encoding to relative 1/2 instead of left(0)/right(1)."""

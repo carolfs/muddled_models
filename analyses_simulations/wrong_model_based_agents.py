@@ -19,7 +19,7 @@ from numba import jit
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from . utils import create_random_rwrd_probs, expit, get_random_fstate,\
+from utils import create_random_rwrd_probs, expit, get_random_fstate,\
     get_random_reward, diffuse_rwrd_probs, fit_stan_model_maxlik,\
     CouldNotFitException, get_stan_model, PLOTS_DIR, RESULTS_DIR, MODELS_DIR
 
