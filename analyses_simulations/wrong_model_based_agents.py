@@ -21,7 +21,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from utils import create_random_rwrd_probs, expit, get_random_fstate,\
     get_random_reward, diffuse_rwrd_probs, fit_stan_model_maxlik,\
-    CouldNotFitException, get_stan_model, PLOTS_DIR, RESULTS_DIR, MODELS_DIR
+    CouldNotFitException, get_stan_model, PLOTS_DIR, RESULTS_DIR, MODELS_DIR,\
+    COLOR_COMMON, COLOR_RARE
 
 # Number of trials each simulated agent will perform
 NUM_TRIALS = 1000
@@ -168,11 +169,6 @@ def simulate_mb_agents(num_agents):
     with open(MB_AGENTS_FLNM, 'wb') as outf:
         pickle.dump(model_results, outf)
     return model_results
-
-# Color for the stay probabilities after rare transitions (red)
-COLOR_RARE = (0.8941176470588236, 0.10196078431372549, 0.10980392156862745, 1.0)
-# Color for the stay probabilities after common transitions (blue)
-COLOR_COMMON = (0.21568627450980393, 0.49411764705882355, 0.7215686274509804, 1.0)
 
 def plot_results(model_results, histogram_bins=None):
     """Plot results from simulated model-based agents in comparison with idealized results."""

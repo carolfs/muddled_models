@@ -271,3 +271,8 @@ def hpd(sampleVec, credMass=0.95):
     HDImax = sortedPts[j + ciIdxInc]
     HDIlim = (HDImin, HDImax)
     return HDIlim
+
+# Color for the stay probabilities after rare transitions (red)
+COLOR_RARE = (0.8941176470588236, 0.10196078431372549, 0.10980392156862745, 1.0)
+# Color for the stay probabilities after common transitions (blue)
+COLOR_COMMON = (0.21568627450980393, 0.49411764705882355, 0.7215686274509804, 1.0)
