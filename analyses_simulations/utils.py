@@ -35,6 +35,7 @@ PLOTS_DIR = os.path.join(ANALYSES_DIR, 'plots')
 RESULTS_DIR = os.path.join(ANALYSES_DIR, 'results')
 PROJECT_DIR = os.path.join(ANALYSES_DIR, '..')
 MODELS_DIR = os.path.join(ANALYSES_DIR, 'models')
+MODEL_RESULTS_DIR = os.path.join(ANALYSES_DIR, 'model_results')
 
 def get_stan_model(textfn, binfn):
     """Loads a Stan model, compiling it if necessary."""
@@ -135,25 +136,59 @@ def load_common_instr_data():
         'score': int,
         'trial': int,
     }
-    data = pd.read_csv(COMMON_INSTR_CSV_FILE, dtype=dtype)
-    return data
+    cminstr = pd.read_csv(COMMON_INSTR_CSV_FILE, dtype=dtype)
+    # Create new columns for this data set, to make it compatible with the others
+    cminstr['slow'] = (cminstr.win == -1).astype('int') # Mark slow trials
+    cminstr['reward'] = cminstr.win
+    cminstr['isymbol_lft'] = cminstr.stim_1_left
+    cminstr['init_state'] = [1]*len(cminstr)
+    cminstr['final_state'] = cminstr['state2']
+    return cminstr
 
 def load_magic_carpet_data():
     "Loads the data from the magic carpet experiment as a pandas DataFrame."
     data_dir = os.path.join(PROJECT_DIR, 'results', 'magic_carpet', 'choices')
-    return pd.concat((
+    flnms = os.listdir(data_dir)
+    flnms.sort()
+    mcdata = pd.concat((
         pd.read_csv(os.path.join(data_dir, flnm)).assign(participant=flnm.split('_')[0])
-        for flnm in os.listdir(data_dir) if flnm.endswith('_game.csv'))).reset_index()
+        for flnm in flnms if flnm.endswith('_game.csv'))).reset_index()
+    mcdata['init_state'] = [1]*len(mcdata)
+    return mcdata
 
 def load_spaceship_data():
     "Loads the data from the spaceship experiment as a pandas DataFrame."
     data_dir = os.path.join(PROJECT_DIR, 'results', 'spaceship', 'choices')
+    flnms = os.listdir(data_dir)
+    flnms.sort()
     ssdf = pd.concat((
         pd.read_csv(os.path.join(data_dir, flnm)).assign(participant=flnm.split('.')[0])
-        for flnm in os.listdir(data_dir) \
-        if flnm.endswith('.csv') and not flnm.endswith('_practice.csv')))
-    ssdf['init_state'] = ssdf.symbol0*2 + ssdf.symbol1
-    return ssdf.reset_index()
+        for flnm in flnms \
+        if flnm.endswith('.csv') and not flnm.endswith('_practice.csv'))).reset_index()
+    ssdf['init_state'] = ssdf.symbol0*2 + ssdf.symbol1 + 1
+    ssdf.choice1 = ssdf.apply(get_spaceship_choice1, axis=1)
+    ssdf.choice2 = ssdf.choice2 + 1
+    ssdf['final_state'] = ssdf['final_state'] + 1
+    return ssdf
+
+def get_spaceship_choice1(trial):
+    """Changes choice encoding to relative 1/2 instead of left(0)/right(1)."""
+    if trial.common:
+        return trial.final_state + 1
+    return 2 - trial.final_state
+
+def load_data_sets():
+    "Loads all three sets of human data"
+    cminstr = load_common_instr_data()
+    mcdata = load_magic_carpet_data()
+    ssdata = load_spaceship_data()
+
+    data_sets = (
+        ('Common instructions', cminstr),
+        ('Magic carpet', mcdata),
+        ('Spaceship', ssdata),
+    )
+    return data_sets
 
 def fetch_common_instr_data():
     "Fetches the data from Kool et al. (2016) off its Github repository."

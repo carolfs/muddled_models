@@ -16,31 +16,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import utils
 
-def get_spaceship_choice1(trial):
-    """Changes choice encoding to relative 1/2 instead of left(0)/right(1)."""
-    if trial.common:
-        return trial.final_state + 1
-    return 2 - trial.final_state
-
-def import_data_sets():
-    "Imports all three sets of human data"
-    cminstr = utils.load_common_instr_data()
-    # Create new columns for this data set, to make it compatible with the others
-    cminstr['slow'] = (cminstr.win == -1).astype('int') # Mark slow trials
-    cminstr['reward'] = cminstr.win
-    cminstr['isymbol_lft'] = cminstr.stim_1_left
-
-    mcdata = utils.load_magic_carpet_data()
-    ssdata = utils.load_spaceship_data()
-    ssdata.choice1 = ssdata.apply(get_spaceship_choice1, axis=1)
-
-    data_sets = (
-        ('Common instructions', cminstr),
-        ('Magic carpet', mcdata),
-        ('Spaceship', ssdata),
-    )
-    return data_sets
-
 def get_all_trial_pairs(part_df):
     "Gets all trial pairs from a participant's data"
     for prev_trial, next_trial in zip(part_df[:-1].itertuples(), part_df[1:].itertuples()):
@@ -166,7 +141,7 @@ def run_logreg_model(data_set_name, data, get_trial_pairs, analysis_name):
 
 def run_logreg_analyses():
     "Runs the logistic regression analyses and saves the Stan samples to disk"
-    data_sets = import_data_sets()
+    data_sets = utils.load_data_sets()
     for data_set_name, data in data_sets:
         for analysis_name, get_trial_pairs in LOGREG_ANALYSES[data_set_name]:
             if not exists(
