@@ -1,8 +1,9 @@
 This project contains the code required to run the spaceship and magic carpet
 tasks mentioned in the paper:
 
-Carolina Feher da Silva and Todd A. Hare.
-*Humans are primarily model-based in the two-stage task*
+Feher da Silva, C., Hare, T.A.
+*Humans primarily use model-based inference in the two-stage task.*
+Nat Hum Behav (2020). https://doi.org/10.1038/s41562-020-0905-y
 
 The experiments inside the `magic_carpet` and `spaceship` directories
 require Python 2.7 and PsychoPy 2 to run.
