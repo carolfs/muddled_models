@@ -359,7 +359,7 @@
                 "sha256:4ce92f1e1f8f01233ee9952c04f6b81d1e02939d6e1b488428154974a4d0783e"
             ],
             "markers": "python_version >= '3.6'",
-            "version": "==59.6.0"
+            "version": ">=65.5.1"
         },
         "six": {
             "hashes": [
